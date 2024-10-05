@@ -58,9 +58,11 @@ if uploaded_image is not None:
 
 
 
-demo_template = f'''Describe the components with clear divisions in each section in the  give a feedback about how the image can be improved 
-                        next time, also provide 5 lines of description about  the image in line  with this request as well {user_input} 
-                        at the end thank the user for using MICA and end with a  positive note of a poetry'''
+demo_template = f'''Take this image and roast it with increasing intensity. 
+                    Start off with some playful and lighthearted jabs, then turn up the heat with some brutal roasts in the middle—donot hold back, go for the most ridiculous and exaggerated insults. 
+                    Make fun of everything that is awkward, ugly, or out of place with ruthless sarcasm. 
+                    After delivering the harshest roasts, lighten up toward the end and close with a clever, humorous punchline that will leave everyone smiling. 
+                    Prompt: {user_input}'''
 
 
 #create a function for response
