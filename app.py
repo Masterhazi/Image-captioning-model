@@ -12,13 +12,22 @@ from PIL import Image #this will store the image
 from io import StringIO
 import pandas as pd
 import numpy as np
+from fpdf import  FPDF
+
 
 #configure genai 
 
 genai.configure(api_key=os.getenv('GOOGLE-API-KEY'))
 
 #configuring the webpage 
-st.markdown(":blue-background[**MICA**] :blue[AI] :blue[C]aption :blue[M]aker")
+st.markdown("""
+    <h1 style='text-align: left; color: #2196F3;'>
+    <span style="background-color: #E3F2FD; padding: 10px; border-radius: 5px;"><b>MICA</b></span> 
+    <span style='color: #2196F3;'>AI</span> 
+    <span style='color: #2196F3;'>Caption</span> 
+    <span style='color: #2196F3;'>Maker</span>
+    </h1>
+""", unsafe_allow_html=True)
 st.caption('AI powered tool to process your images and give output anything you need')
 
 st.markdown("""<hr style="height:3px;border:none;color:#a5d6ff;background-color:#a5d6ff;" /> """, unsafe_allow_html=True)
@@ -71,3 +80,25 @@ if submit:
     response = gemini_response(user_input=demo_template, img = img)
     st.subheader('The Response is:', divider = True)
     st.write(response)
+    
+    def save_to_pdf(text):
+            pdf = FPDF()
+            pdf.add_page()
+            pdf.set_font("Arial", size=12)
+            pdf.multi_cell(0, 10, text)
+            
+            # Save the file
+            pdf_output = "generated_caption.pdf"
+            pdf.output(pdf_output)
+            return pdf_output
+
+        # Provide a download button for the PDF
+    if response is not None:
+        pdf_file = save_to_pdf(response)
+        with open(pdf_file, "rb") as pdf:
+            st.download_button(
+                label="Download Caption as PDF",
+                data=pdf,
+                file_name="MICA_caption.pdf",
+                mime="application/pdf"
+                )
