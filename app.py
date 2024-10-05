@@ -81,19 +81,28 @@ if submit:
     st.subheader('The Response is:', divider = True)
     st.write(response)
     
+ # Create a function to save the response to a PDF
     def save_to_pdf(text):
-            pdf = FPDF()
-            pdf.add_page()
-            pdf.set_font("Arial", size=12)
-            pdf.multi_cell(0, 10, text)
-            
-            # Save the file
-            pdf_output = "generated_caption.pdf"
-            pdf.output(pdf_output)
-            return pdf_output
+        pdf = FPDF()
+        pdf.add_page()
+        pdf.set_font("Arial", size=12)
+        
+        # Make sure we encode the text in UTF-8
+        try:
+            pdf.multi_cell(0, 10, text.encode('latin1', 'replace').decode('latin1'))
+        except Exception as e:
+            st.error(f"Error generating PDF: {str(e)}")
 
-        # Provide a download button for the PDF
-    if response is not None:
+        # Save the file
+        pdf_output = "generated_caption.pdf"
+        try:
+            pdf.output(pdf_output)
+        except Exception as e:
+            st.error(f"Error saving PDF: {str(e)}")
+        return pdf_output
+
+    # Provide a download button for the PDF
+    if response:
         pdf_file = save_to_pdf(response)
         with open(pdf_file, "rb") as pdf:
             st.download_button(
@@ -101,4 +110,8 @@ if submit:
                 data=pdf,
                 file_name="MICA_caption.pdf",
                 mime="application/pdf"
-                )
+            )
+
+
+
+
