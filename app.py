@@ -22,13 +22,13 @@ genai.configure(api_key=os.getenv('GOOGLE-API-KEY'))
 #configuring the webpage 
 st.markdown("""
     <h1 style='text-align: left; color: #2196F3;'>
-    <span style="background-color: #E3F2FD; padding: 10px; border-radius: 5px;"><b>MICA</b></span> 
+    <span style="background-color: #E3F2FD; padding: 10px; border-radius: 5px;"><b>MASTER</b></span> 
+    <span style='color: #2196F3;'>The</span> 
     <span style='color: #2196F3;'>AI</span> 
-    <span style='color: #2196F3;'>Caption</span> 
-    <span style='color: #2196F3;'>Maker</span>
+    <span style='color: #2196F3;'>Roaster</span>
     </h1>
 """, unsafe_allow_html=True)
-st.caption('AI powered tool to process your images and give output anything you need')
+st.caption('Ever wanna roast the hell out of your friends but fell short of words well')
 
 st.markdown("""<hr style="height:3px;border:none;color:#a5d6ff;background-color:#a5d6ff;" /> """, unsafe_allow_html=True)
 
@@ -58,7 +58,7 @@ if uploaded_image is not None:
 
 
 
-demo_template = f'''Take this image and roast it with increasing intensity. 
+demo_template = f'''Take this image and roast it with increasing intensity. Use carryminati style in roasting for better reference 
                     Start off with some playful and lighthearted jabs, then turn up the heat with some brutal roasts in the middle—donot hold back, go for the most ridiculous and exaggerated insults. 
                     Make fun of everything that is awkward, ugly, or out of place with ruthless sarcasm. 
                     After delivering the harshest roasts, lighten up toward the end and close with a clever, humorous punchline that will leave everyone smiling. 
