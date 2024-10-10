@@ -107,7 +107,3 @@ With **MICA**, we combine technical innovation with creativity, ensuring a pleas
 We hope MICA helps bring your images to life with thoughtful and creative AI-powered captions. Thank you for joining us on this journey to connect **art and technology**. We can't wait to see what you create next!
 
 > *"Every image has a story—let MICA tell yours."*
-
----
-
-The accents and emojis should add more color and excitement to the README, making it engaging and visually appealing! Feel free to tweak it as per your taste!
