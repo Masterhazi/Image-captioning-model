@@ -58,11 +58,7 @@ if uploaded_image is not None:
 
 
 
-demo_template = f'''Take this image and roast it with increasing intensity. 
-                    Start off with some playful and lighthearted jabs, then turn up the heat with some brutal roasts in the middle—donot hold back, go for the most ridiculous and exaggerated insults. 
-                    Make fun of everything that is awkward, ugly, or out of place with ruthless sarcasm. 
-                    After delivering the harshest roasts, lighten up toward the end and close with a clever, humorous punchline that will leave everyone smiling. 
-                    Prompt: {user_input}'''
+demo_template = f'''Take this image and provide some heartfelt captions to this image, says how the image is beautiful and provide positive notes about the elements in the image also fulfill this requirement {user_input} and now end with a positive note encouraging them to use MICA in future'''
 
 
 #create a function for response
