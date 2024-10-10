@@ -1,6 +1,3 @@
-Let's add some colors and visual elements for emphasis in the README. Here's the updated version with color accents to give it more style and vibrancy:
-
----
 
 # 🎨 **MICA: AI Caption Maker** 🎨
 
