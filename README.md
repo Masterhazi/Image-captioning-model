@@ -2,6 +2,7 @@
 # 🎨 **MICA: AI Caption Maker** 🎨
 
 **MICA** (*AI Caption Maker*) is a visually appealing and AI-powered web application that lets users upload or capture images and receive smart, descriptive captions, all thanks to **Google's LLM**. Designed with a sleek interface, this tool is perfect for creative captions, photo analysis, and more!
+![image](https://github.com/user-attachments/assets/270bca3d-acd7-412d-9fe9-279bb28bb8bf)
 
 ---
 
